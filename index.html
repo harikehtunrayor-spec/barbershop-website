@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshcut Barbing saloon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+    <h2 class="logo">FreshCut</h2>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+     <section class="hero">
+        <h1>FreshCut Barbershop</h1>
+        <p>Sharp Cuts. Clean Finish. Premium Style.</p>
+        <a href="https://wa.me/2348083346434" class="btn" target="_blank">
+    Book Appointment
+</a>
+    </section>
+    <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service-box">
+            <div class="icon">✂️</div>
+            <h3>Classic Haircut</h3>
+            <p>Sharp, clean professional haircut tailored for you.</p>
+        </div>
+        <div class="service-box">
+            <div class="icon">🧔</div>
+            <h3>Beard Grooming</h3>
+            <p>Expert beard shaping and styling for a fresh look.</p>
+        </div>
+        <div class="service-box">
+            <div class="icon">👦</div>
+            <h3>Kids Haircut</h3>
+            <p>Comfortable and stylish cuts for your kids.</p>
+        </div>
+        <div class="service-box">
+            <div class="icon">🏠</div>
+            <h3>Home Service</h3>
+            <p>We come to you for premium grooming at home.</p>
+        </div>
+    </div>
+</section>
+    <section class="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/cut 1.webp" alt="Haircut 1">
+            <div class="overlay">Classic Haircut</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/cut2.jpg" alt="Haircut 2">
+            <div class="overlay">Beard Grooming</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/cut 3.jpg" alt="Haircut 3">
+            <div class="overlay">Modern Haircut</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/cut4.webp" alt="Haircut 4">
+            <div class="overlay">Kids Haircut</div>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <p><strong>Phone:</strong> <a href="https://wa.me/2348083346434" target="_blank">+234 8083346434</a></p>
+            <p><strong>Address:</strong> 08 happy day, Abule iyana era ,Lagos
+        </p>
+            <iframe src="https://maps.google.com/maps?q=lagos&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+<section class="pricing" id="pricing">
+    <h2>Pricing</h2>
+    <div class="pricing-container">
+        <div class="price-box">
+            <h3>Classic Haircut</h3>
+            <p class="price">₦2,000</p>
+            <a href="https://wa.me/2348083346434" class="btn">Book Now</a>
+        </div>
+        <div class="price-box">
+            <h3>Beard Grooming</h3>
+            <p class="price">₦1,500</p>
+            <a href="https://wa.me/2348083346434" class="btn">Book Now</a>
+        </div>
+        <div class="price-box">
+            <h3>Kids Haircut</h3>
+            <p class="price">₦1,500</p>
+            <a href="https://wa.me/2348083346434" class="btn">Book Now</a>
+        </div>
+        <div class="price-box">
+            <h3>Home Service</h3>
+            <p class="price">₦3,500</p>
+            <a href="https://wa.me/2348083346434" class="btn">Book Now</a>
+        </div>
+    </div>
+</section>
+<script>
+const sections = document.querySelectorAll(".services, .gallery, .pricing, .contact");
+
+function checkSections(){
+    const triggerBottom = window.innerHeight / 5 * 4;
+
+    sections.forEach(section=>{
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if(sectionTop < triggerBottom){
+            section.classList.add("visible");
+        }
+    });
+}
+
+// Run once on page load
+window.addEventListener("load", checkSections);
+window.addEventListener("scroll", checkSections);
+</script>
+<script>
+const animatedSections = document.querySelectorAll(".services, .pricing, .gallery, .contact");
+
+function revealSections(){
+    const triggerPoint = window.innerHeight / 5 * 4;
+
+    animatedSections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if(sectionTop < triggerPoint){
+            section.classList.add("visible");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+</script>
+<script>
+const cards = document.querySelectorAll(".service-box, .price-box");
+
+function revealCards(){
+    const triggerPoint = window.innerHeight / 5 * 4;
+
+    cards.forEach((card, index) => {
+        const cardTop = card.getBoundingClientRect().top;
+
+        if(cardTop < triggerPoint){
+            setTimeout(() => {
+                card.classList.add("visible");
+            }, index * 150); // delay for stagger effect
+        }
+    });
+}
+
+window.addEventListener("scroll", revealCards);
+window.addEventListener("load", revealCards);
+</script>
+<footer class="footer">
+    <p>© 2026 FreshCut Barbershop | All Rights Reserved</p>
+</footer>
+</body>
+</html>
