@@ -466,3 +466,15 @@ section{
     font-size: 14px;
     color: #aaa;
 }
+@media screen and (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar a{
+        display: block;
+        margin: 8px 0;
+    }
+}
