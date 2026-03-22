@@ -10,11 +10,6 @@ body{
     margin: 0;
     font-family: Arial,  sans-serif;
 }
-body{
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    padding-top: 80px
-}
 .hero{
     height: 100vh;
     background:
@@ -22,7 +17,6 @@ body{
     url("images/barber.jpg");
     background-size: cover;
     background-position: center;
-
     color: white;
     display: flex;
     flex-direction: column;
@@ -31,10 +25,11 @@ body{
     text-align: center;
     padding: 20px;
     margin-top: 0;
+    padding-top: 0;
 }
 .hero h1{
     font-size: 70px;
-    margin: 0;
+    margin-top: 0;
     letter-spacing: 2px;
 }
 .hero h1::after{
@@ -111,6 +106,7 @@ body{
 }
 /* NAVBAR BASE STYLE */
 .navbar{
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,6 +114,7 @@ body{
     color: white;
     padding: 10px 20px;
     position: relative;
+    margin: 0;
 }
 
 .nav-links a{
@@ -203,10 +200,6 @@ section{
 }
 html{
     scroll-behavior: smooth;
-}
-body{
-    margin: 0;
-    padding-top: 110px; /* adjust if needed */
 }
 @media (max-width: 768px){
 

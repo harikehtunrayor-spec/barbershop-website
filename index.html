@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <a href="https://wa.me/2348083346434" class="whatsapp-float" target="_blank">
-💬
-</a>
 <body>
     <!-- NAVBAR -->
 <nav class="navbar">
@@ -168,11 +166,10 @@ function revealCards(){
         if(cardTop < triggerPoint){
             setTimeout(() => {
                 card.classList.add("visible");
-            }, index * 150); // delay for stagger effect
-        }
-    });
+    }, index * 150); // delay for stagger effect
 }
-
+ });
+}
 window.addEventListener("scroll", revealCards);
 window.addEventListener("load", revealCards);
 </script>
